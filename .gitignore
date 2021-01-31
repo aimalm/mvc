@@ -1,0 +1,3 @@
+../Model/config.php
+.vscode
+.ideagit push -u origin main
