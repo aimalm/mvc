@@ -9,5 +9,16 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to my site</h1>
+    
+    
+    <p><a href="index.php?page=info">About</a></p>
+    <p><a href="index.php?page=signup">Sign up </a></p>
+    <p><a href="index.php?page=login">Log in</a></p>
+    
+
+
+
+
+
+
     </header>
