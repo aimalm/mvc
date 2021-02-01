@@ -3,11 +3,11 @@ body{
 
     margin:0;
     padding:0;
-    background-image:url(fish.png);
+    /* background-image:url(fish.png); */
     background-attachment: fixed;
     background-position: center; 
     background-repeat:no-repeat;
-    background-size:73% 73% ;
+    background-size:40% 40% ;
     font-family:'Times New Roman', Times, serif ;/*apply a general one */
   }
 
