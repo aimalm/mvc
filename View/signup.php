@@ -1,6 +1,4 @@
-<?php 
-require 'includes/header.php'; 
-?>
+
 
 <link rel="stylesheet" href="View/style/style.css">
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
@@ -8,7 +6,7 @@ require 'includes/header.php';
 <div class="signup-form">
 <h1> Sign Up Now </h1>
 
-<form class="row g-3" action="signup.php" method="post">
+<form class="row g-3" action="" method="post">
   <div class="col-md-6">
     <!-- <label class="form-label">Email</label> -->
     <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="E-mail">
@@ -46,5 +44,4 @@ require 'includes/header.php';
   
   </div>
 
-<!-- <?php require 'includes/footer.php'; ?> -->
  

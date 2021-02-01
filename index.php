@@ -17,14 +17,15 @@ if(isset($_GET['page']) && $_GET['page'] === 'info') {
     $controller = new InfoController();
 }
 
-// $controller = new HomepageController();
-// if(isset($_GET['page']) && $_GET['page'] === 'login') {
-//     $controller = new LoginController();
-// }
-$controller = new HomepageController();
+if(isset($_GET['page']) && $_GET['page'] === 'login') {
+    $controller = new LoginController();
+}
+
 if(isset($_GET['page']) && $_GET['page'] === 'signup') {
     $controller = new SignupController();
 }
+
+
 
 $controller->render($_GET, $_POST);
 

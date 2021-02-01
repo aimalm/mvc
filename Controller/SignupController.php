@@ -8,7 +8,7 @@ class SignupController
     {
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.
-
+        echo 'hey';
         //load the view
         require 'View/signup.php';
 
