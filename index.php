@@ -29,9 +29,9 @@ if(isset($_GET['page']) && $_GET['page'] === 'info') {
 
 }
 
-// if(isset($_GET['page']) && $_GET['page'] === 'login') {
-//      $controller = new LoginController();
-
+if(isset($_GET['page']) && $_GET['page'] === 'login') {
+     $controller = new LoginController($databaseManager);
+}
 
 if(isset($_GET['page']) && $_GET['page'] === 'signup') {
     $controller = new SignupController($databaseManager);
