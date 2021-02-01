@@ -17,7 +17,7 @@
     <input type="text" name="profilepic" class="form-control"  >
 
   
-   <button type="submit" name="login">Login </button>
+   <button type="submit" name="signup">Sign Up </button>
 
   </form>
   

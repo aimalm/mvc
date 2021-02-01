@@ -17,7 +17,7 @@ class SignupController
         //  $login=new LoginModel($databaseManager);
         //  $login->login();
 
-        if(isset($_POST['login'])){
+        if(isset($_POST['signup'])){
             $name=$_POST['name'];
             $lastName=$_POST['lastname'];
             $email=$_POST['email'];
@@ -25,10 +25,13 @@ class SignupController
             $profilePicture=$_POST['profilepic'];
         
         $sql="INSERT INTO user (`firstName`, `lastName`, `email`, `password`, `profilePicture`) VALUES ('$name', '$lastName','$email', '$password', '$profilePicture')";
-        $this->databaseManager->connection->query($sql);
-        return $this->databaseManager;
+        $result=$this->databaseManager->connection->query($sql);
+        $result->execute([$name,$lastName,$email,$password,$profilePicture]);
 
+        header('Location: View/login.php');
         }
+        
+
         
         //load the view
         require 'View/sign_up.php';
