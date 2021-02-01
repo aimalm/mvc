@@ -34,7 +34,7 @@ if(isset($_GET['page']) && $_GET['page'] === 'info') {
 
 
 if(isset($_GET['page']) && $_GET['page'] === 'signup') {
-    $controller = new SignupController();
+    $controller = new SignupController($databaseManager);
 }
 
 
