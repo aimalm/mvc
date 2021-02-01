@@ -28,7 +28,8 @@ class SignupController
         $result=$this->databaseManager->connection->query($sql);
         $result->execute([$name,$lastName,$email,$password,$profilePicture]);
 
-        header('Location: View/login.php');
+        header('Location: index.php?page=login');
+        exit();
         }
         
 

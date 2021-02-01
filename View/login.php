@@ -1,4 +1,6 @@
 
+<?php require 'includes/header.php'?>
+
 <link rel="stylesheet" href="View/style/style.css">
 
 <div class="signup-form">
@@ -17,5 +19,5 @@
   </form>
   
   </div>
-
+  <?php require 'includes/footer.php'?>
  

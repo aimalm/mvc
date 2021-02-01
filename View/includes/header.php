@@ -1,4 +1,7 @@
-<!doctype html>
+
+
+
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,16 +12,20 @@
 </head>
 <body>
     <header>
-    
-    
-    <p><a href="index.php?page=info">About</a></p>
-    <p><a href="index.php?page=signup">Sign up </a></p>
-    <p><a href="index.php?page=login">Log in</a></p>
-    
+    <?php
+    if(isset($_GET['profile'])) { ?>
+        <p><a href="../../index.php">Log Out</a></p>
+        <?php
+        //exit();
 
+    } 
+    else
+    {
+        ?>
+        <p><a href="index.php?page=info">About</a></p>
+        <p><a href="index.php?page=signup">Sign up </a></p>
+        <p><a href="index.php?page=login">Log in</a></p>
 
-
-
-
-
+        <?php
+    } ?>
     </header>
