@@ -57,6 +57,6 @@ class LoginController
 
 
 
-        require 'View/login.php';
+        require './View/login.php';
     }
 }
