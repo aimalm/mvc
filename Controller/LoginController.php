@@ -31,6 +31,7 @@ class LoginController
                     session_start();
                     $_SESSION["email"] = "$email";
                     $_SESSION["password"] = "$password";
+                    $_SESSION["uid"] = "{$user['id']}";
                     echo $user['firstName'];
                     
                     header("Location: View/info.php/?profile={$user['id']}");
