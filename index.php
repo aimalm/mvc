@@ -7,7 +7,7 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 //include all your model files here
-require_once './Model/config.php';
+require_once './Model/config1.php';
 require_once './Model/DatabaseManager.php';
 require 'Model/User.php';
 //include all your controllers here
