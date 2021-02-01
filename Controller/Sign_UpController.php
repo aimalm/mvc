@@ -26,8 +26,8 @@ class SignupController
         
         $sql="INSERT INTO user (`firstName`, `lastName`, `email`, `password`, `profilePicture`) VALUES ('$name', '$lastName','$email', '$password', '$profilePicture')";
         $result=$this->databaseManager->connection->query($sql);
-
-        $result->execute([$name,$lastName,$email,$password,$profilePicture]);
+        //$result->prepare($result);
+        //$result->execute([$name,$lastName,$email,$password,$profilePicture]);
 
         header('Location: ./index.php?page=login');
         //exit();
