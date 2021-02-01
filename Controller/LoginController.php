@@ -32,9 +32,9 @@ class LoginController
                     $_SESSION["email"] = "$email";
                     $_SESSION["password"] = "$password";
                     $_SESSION["uid"] = "{$user['id']}";
-                    echo $user['firstName'];
+                    //echo $user['firstName'];
                     
-                    header("Location: ./View/info.php/?profile={$user['id']}");
+                    header("Location: ./View/info.php/?profile={$_SESSION["uid"]}");
                     //exit();
                 } 
                 else 
