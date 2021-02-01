@@ -23,7 +23,7 @@ class LoginController
 
             $sql = "SELECT * FROM user WHERE email ='$email' AND password='$password'";
             $result = $this->databaseManager->connection->query($sql);
-            $result->execute([$email, $password]);
+            //$result->execute([$email, $password]);
             //var_dump($result->email);
             foreach ($result as $user) {
                 //var_dump($em['email']);
