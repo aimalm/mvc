@@ -35,7 +35,7 @@ class SignupController
 
         
         //load the view
-        require 'View/sign_up.php';
+        require './View/sign_Up.php';
         
     }
     
