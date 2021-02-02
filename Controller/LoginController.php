@@ -45,9 +45,20 @@ class LoginController
                     //exit();
                 } 
                 else 
-                {                   
+                {        
+
+                        $_SESSION["loginErr"] = "";
+
+                    if($_SESSION["loginErr"]){  
+                        unset($_SESSION["loginErr"]);
+         
                     //header('Location: View/sign_Up.php');
-                    $_SESSION["loginErr"] = "wrong password or email";
+
+                    }
+                    else{
+                        $_SESSION["loginErr"] = "wrong password or email";
+
+                    }
                 }
         }
     }

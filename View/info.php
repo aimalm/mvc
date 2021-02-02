@@ -1,4 +1,5 @@
 <?php require 'includes/header.php'?>
+<?php include './includes/subMenu.php' ?>
     <section>
         <h4>Info page</h4>
 
