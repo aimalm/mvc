@@ -3,8 +3,6 @@ body{
 
     margin:0;
     padding:0;
-    /* background-image:url(fish.png); */
-    background-attachment: fixed;
     background-position: center; 
     background-repeat:no-repeat;
     background-size:40% 40% ;
@@ -35,7 +33,7 @@ body{
     border:1px solid #999; /*make input field look transparent*/
 }
 
-.btn-primary{
+.signup{
     color:white;
     background-color:#1c8bdbb0;
     border-radius: 15px;

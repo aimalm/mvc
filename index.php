@@ -15,6 +15,7 @@ require 'Controller/HomepageController.php';
 require 'Controller/InfoController.php';
 require 'Controller/LoginController.php';
 require 'Controller/Sign_UpController.php';
+require 'Controller/EditController.php';
 require 'Model/signupModel.php';
 
 //you could write a simple IF here based on some $_GET or $_POST vars, to choose your controller
@@ -36,6 +37,13 @@ if(isset($_GET['page']) && $_GET['page'] === 'login') {
 if(isset($_GET['page']) && $_GET['page'] === 'signup') {
     $controller = new SignupController($databaseManager);
 }
+
+if(isset($_GET['page']) && $_GET['page'] === 'edit') {
+    $controller = new EditController($databaseManager);
+}
+
+
+
 
 
 $controller->render($_GET, $_POST);
