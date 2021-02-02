@@ -1,31 +1,45 @@
-
-
-
-    <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="View/style/style.css">
     <title>Becode - Boiler plate MVC</title>
 </head>
 <body>
     <header>
-    <?php
-    if(isset($_GET['profile'])) { ?>
-        <p><a href="../../index.php">Log Out</a></p>
-        <?php
-        //exit();
-
-    } 
-    else
-    {
-        ?>
-        <p><a href="index.php?page=info">About</a></p>
-        <p><a href="index.php?page=signup">Sign up </a></p>
-        <p><a href="index.php?page=login">Log in</a></p>
-
-        <?php
-    } ?>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <?php
+                            if (isset($_GET['profile'])) { ?>
+                            <!-- this link should take you back to the main profile page instead of the homepage-->
+                                <a class="navbar-brand" href="../../index.php">Shenanigans</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../../index.php">Log out</a>
+                                </li>
+                                <?php
+                                //exit();
+                            }
+                            else
+                            {?>
+                                <a class="navbar-brand" href="index.php">Shenanigans</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php?page=login">Log in</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php?page=signup">Sign up</a>
+                                </li>
+                            <?php
+                            }?>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
