@@ -2,11 +2,12 @@
 
 declare(strict_types = 1);
 
+session_start();
 
 class UpdateController{
 
-    public $statement;
     public $databaseManager;
+ 
     
 
     //render function with both $_GET and $_POST vars available if it would be needed.
@@ -15,47 +16,51 @@ class UpdateController{
         $this->databaseManager = $databaseManager;
     }
 
-    public function render(array $GET, array $POST)
-    {
+    
+
+    public function update(){
+        
+        // //SELECT
+        
+        $id=$_SESSION["uid"];
+        $sql = "SELECT * FROM user WHERE id=83";
+        $result = $this->databaseManager->database->prepare($sql);
+        $result->execute();
+        $resultArray=$result->fetch();
+
+        var_dump($id);
+        
         if(isset($_POST['update'])){
-            echo 'hi';
+            // echo 'hi';
+            // $_SESSION['ses_firstname']=$_POST['firstName'];
+            // $firstName=$_SESSION['ses_firstname'];
+            // $_SESSION['ses_lastname']=$_POST['lastName'];
+            // $lastName=$_SESSION['ses_lastname'];
+            // $_SESSION['ses_password']=$_POST['password'];
+            // $password=$_SESSION['ses_password'];
+            // $_SESSION['ses_profilepicture']=$_POST['profilepicture'];
+            // $profilePicture=$_SESSION['ses_profilepicture'];
 
-            $firstName=$_POST['firstName'];
-            $lastName=$_POST['lastName'];
-            $password=$_POST['password'];
-            $profilePicture=$_POST['profilepicture'];
-            session_start();
-            $id=$_SESSION["uid"];
-
-            $sqlForUpdate="UPDATE user SET firstName ='$firstName', lastName='$lastName', password='$password',profilePicture='$profilePicture' WHERE id='$id' ";
-            $statement=$this->databaseManager->connection->prepare($sqlForUpdate);
-             var_dump($statement);
-            // $statement = $connection->prepare($sqlForUpdate);
-            $statement->execute();
-
-            // $result=$this->statement->fetch();
-
-            //no empty value error handling 
-
-        }
-
-
-
+            // $id=$_SESSION["uid"];
+            // var_dump($_SESSION);
+            // $sqlForUpdate="UPDATE user SET firstName ='$firstName', lastName='$lastName', password='$password',profilePicture='$profilePicture' WHERE id='$id' ";
+            // $statement=$this->databaseManager->connection->prepare($sqlForUpdate);
+            // $statement->execute();
+        
+            // var_dump($statement);
 
 
 
 
         // header("Location: ./View/info.php/?profile={$_SESSION["uid"]}");
 
-
-
+        }
+    }
+    
+    public function render(array $GET, array $POST)
+    {
+        $this->update();
         require 'View/update.php';
 
-
-
-
-
-
-    
     }
 }
