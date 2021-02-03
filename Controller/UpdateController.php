@@ -19,7 +19,7 @@ class UpdateController{
 
     public function update(){
         
-        // //SELECT
+        //SELECT
 
         $id=$_SESSION["uid"];
         $sql = "SELECT * FROM user WHERE id='$id' ";
@@ -32,7 +32,7 @@ class UpdateController{
         $_SESSION['password']=$resultArray['password'];
         $_SESSION['profilepicture']=$resultArray['profilePicture'];
         
-
+        // UPDATE 
         
         if(isset($_POST['update'])){
             $_SESSION['firstName']=$_POST['firstName'];
@@ -43,6 +43,17 @@ class UpdateController{
             $password=$_SESSION['password'];
             $_SESSION['profilepicture']=$_POST['profilepicture'];
             $profilepicture=$_SESSION['profilepicture'];
+            $id=$_SESSION["uid"];
+
+            // var_dump($_SESSION);
+            $sqlForUpdate="UPDATE user SET firstName ='$firstName', lastName='$lastName', password='$password',profilepicture='$profilepicture' WHERE id='$id' ";
+            $statement=$this->databaseManager->connection->prepare($sqlForUpdate);
+            $statement->execute();
+        
+            // var_dump($statement);
+
+            //DISPLAY ERROR FOR EMPTY FIELDS
+
 
             if(!empty($_POST['firstName'] &&  $_POST['lastName'] && $_POST['password']  && $_POST['profilepicture'] )){
             echo 'Your changes are successfully saved!';
@@ -50,17 +61,55 @@ class UpdateController{
             }else{
                 $_SESSION['showerror']='Required to fill in all the areas!';
 
-
             }
         
+            
+            //UPLOAD PROFILE IMAGE 
 
-            $id=$_SESSION["uid"];
-            // var_dump($_SESSION);
-            $sqlForUpdate="UPDATE user SET firstName ='$firstName', lastName='$lastName', password='$password',profilepicture='$profilepicture' WHERE id='$id' ";
-            $statement=$this->databaseManager->connection->prepare($sqlForUpdate);
+            if(isset($_POST['imagebutton'])){
+               $target= ".View/images/".basename($_FILES['profilepicture']['name']);
+                $profilePic=$_FILES['profilepicture']['name'];
+
+                $sqlForImage="INSERT INTO user ( profilePicture) VALUES ('$profilePic')";
+                $statement=$this->databaseManager->connection->prepare($sqlForImage);
+                $statement->execute();
+
+                if(move_uploaded_file($_FILES['profilePic']['tmp_name'],$target)){
+                    echo "Profile picture has been changed succesfully";
+                 } else {
+                echo "There is a problem uploading the image!";
+                }
+
+            }
+
+            //DISPLAY PROFILE IMAGE
+
+            $sqlForDisplayImg="SELECT * FROM user ";
+            $statement=$this->databaseManager->connection->query($sqlForDisplayImg);
+            $statement->bindParam(1, $_GET['id']);
             $statement->execute();
-        
-            // var_dump($statement);
+             
+            // to verify if a record is found
+            $num = $statement->rowCount();
+             
+            if( $num ){
+                // if found
+                $row = $statement->fetch(PDO::FETCH_ASSOC);
+                var_dump($row);
+                // specify header with content type,
+                // you can do header("Content-type: image/jpg"); for jpg,
+                // header("Content-type: image/gif"); for gif, etc.
+                header("Content-type: image/jpg");
+                
+                //display the image data
+                print $row['profilePicture'];
+                exit;
+            }else{
+                //if no image found with the given id,
+                //load/query your default image here
+            }
+
+
 
 
 
