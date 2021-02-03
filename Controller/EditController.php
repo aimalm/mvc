@@ -15,7 +15,8 @@ class EditController
     public function render(array $GET, array $POST)
     {
     
-        if(isset($_POST['editbtn'])){
+        if(isset($_POST['edit'])){
+            echo 'hu';
 
             $firstName=$_POST['firstName'];
             $lastName=$_POST['lastName'];
@@ -29,10 +30,10 @@ class EditController
 
         var_dump($result);
 
-        header('Location: View/info.php');
+        // header('Location: View/info.php');
         }
     
-        require 'View/edit.php';
+         require 'View/edit.php';
 
     }
     
