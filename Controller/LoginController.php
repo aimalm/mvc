@@ -7,6 +7,7 @@ class LoginController
     //render function with both $_GET and $_POST vars available if it would be needed.
     public $databaseManager;
     public $loginErr;
+    public $log = 5;
 
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function __construct(DatabaseManager $databaseManager)
@@ -21,42 +22,39 @@ class LoginController
             $password = $_POST['password'];
 
 
-            $sql = "SELECT * FROM user WHERE email ='$email' AND password='$password'";
-            $result = $this->databaseManager->connection->query($sql);
-            //$result->execute([$email, $password]);
-            //var_dump($result->email);
-            foreach ($result as $user) {
+            $user = "SELECT * FROM user WHERE email ='$email' AND password='$password'";
+            $stm = $this->databaseManager->connection->query($user);
+            //$result= $stm->execute();
+            $result = $stm->fetch(PDO::FETCH_ASSOC);
+            $userArray = $result;
+            echo "<pre>";
+                //var_dump($result['email']);
+            echo "</pre>";
+
+
+
                 //var_dump($em['email']);
-                if ($email === $user['email'] && $password === $user['password']) {
+                if ($userArray) {
                     session_start();
                     $_SESSION["email"] = "$email";
                     $_SESSION["password"] = "$password";
-                    $_SESSION["uid"] = "{$user['id']}";
+                    $_SESSION["uid"] = "{$result['id']}";
                     //echo $user['firstName'];
                     
                     header("Location: ./View/info.php/?profile={$_SESSION["uid"]}");
                     //exit();
                 } 
                 else 
-                {
-                    echo "wrong";
-                    header('Location: View/sign_Up.php');
-
-                    //$this->loginErr = "wrong password or email";
+                {                   
+                    //header('Location: View/sign_Up.php');
+                    $_SESSION["loginErr"] = "wrong password or email";
                 }
-            }
         }
     }
 
     public function render(array $GET, array $POST)
     {
-
-        //  $login=new LoginModel($databaseManager);
-        //  $login->login();
         $this->login();
-
-
-
         require './View/login.php';
     }
 }
