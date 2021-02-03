@@ -15,20 +15,21 @@
             <div class="mb-3">
                 <label for="email_signup" class="form-label">Email</label>
                 <input type="text" class="form-control" id="email_signup" name="email" placeholder="Enter your email address...">
-                <p> <?php echo $SignupController->signUpErr ?> </p>
+                <p> <?php  echo $_SESSION["signUpErr"]; ?> </p>
             </div>
             <div class="mb-3">
                 <label for="pass_signup" class="form-label">Password</label>
                 <input type="text" class="form-control" id="pass_signup" name="password" placeholder="Enter your password...">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" id="pass_signup" name="passwordrepeat" placeholder="Repeat your password...">
+                <input type="text" class="form-control" id="pass_signup" name="passwordrepeat" placeholder="Confirm your password...">
+                <p> <?php  echo $_SESSION["passErr"]; ?> </p>
+
             </div>
             <button type="submit" class="btn btn-outline-secondary" id="signup" name="signup">Sign up</button>
         </form>
     </div>
 </div>
-
 <style>
     body {
         height: 100vh;
@@ -57,9 +58,6 @@
         width: 100px;
     } 
 
-<<<<<<< HEAD
-<div class="signup-form">
-=======
     footer {
         text-align: center;
         margin-bottom: 5px;
@@ -70,7 +68,6 @@
 
 
 <!-- <div class="login-form">
->>>>>>> ecf009fa48c23556b13cef1ab7988db32977de37
 
   <form class="row g-3" action="" method="post" >
 
@@ -101,11 +98,9 @@
 
   </form>
   
-<<<<<<< HEAD
 </div>
-=======
 </div> -->
 
 <?php require 'includes/footer.php'?>
 
->>>>>>> ecf009fa48c23556b13cef1ab7988db32977de37
+

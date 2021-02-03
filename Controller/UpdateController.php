@@ -2,7 +2,6 @@
 
 declare(strict_types = 1);
 
-session_start();
 
 class UpdateController{
 
@@ -21,37 +20,51 @@ class UpdateController{
     public function update(){
         
         // //SELECT
-        
-        $id=$_SESSION["uid"];
-        $sql = "SELECT * FROM user WHERE id=83";
-        $result = $this->databaseManager->database->prepare($sql);
-        $result->execute();
-        $resultArray=$result->fetch();
 
-        var_dump($id);
+        $id=$_SESSION["uid"];
+        $sql = "SELECT * FROM user WHERE id='$id' ";
+        $result = $this->databaseManager->connection->query($sql); //prepare can also be used instead of query
+        // $result->execute();
+        $resultArray=$result->fetch();
+        // var_dump($resultArray);
+        $_SESSION['firstName']=$resultArray['firstName'];
+        $_SESSION['lastName']=$resultArray['lastName'];
+        $_SESSION['password']=$resultArray['password'];
+        $_SESSION['profilepicture']=$resultArray['profilePicture'];
+        
+
         
         if(isset($_POST['update'])){
-            // echo 'hi';
-            // $_SESSION['ses_firstname']=$_POST['firstName'];
-            // $firstName=$_SESSION['ses_firstname'];
-            // $_SESSION['ses_lastname']=$_POST['lastName'];
-            // $lastName=$_SESSION['ses_lastname'];
-            // $_SESSION['ses_password']=$_POST['password'];
-            // $password=$_SESSION['ses_password'];
-            // $_SESSION['ses_profilepicture']=$_POST['profilepicture'];
-            // $profilePicture=$_SESSION['ses_profilepicture'];
+            $_SESSION['firstName']=$_POST['firstName'];
+            $firstName=$_SESSION['firstName'];
+            $_SESSION['lastName']=$_POST['lastName'];
+            $lastName=$_SESSION['lastName'];
+            $_SESSION['password']=$_POST['password'];
+            $password=$_SESSION['password'];
+            $_SESSION['profilepicture']=$_POST['profilepicture'];
+            $profilepicture=$_SESSION['profilepicture'];
 
-            // $id=$_SESSION["uid"];
+            if(!empty($_POST['firstName'] &&  $_POST['lastName'] && $_POST['password']  && $_POST['profilepicture'] )){
+            echo 'Your changes are successfully saved!';
+            // var_dump($_POST['firstName']);
+            }else{
+                $_SESSION['showerror']='Required to fill in all the areas!';
+
+
+            }
+        
+
+            $id=$_SESSION["uid"];
             // var_dump($_SESSION);
-            // $sqlForUpdate="UPDATE user SET firstName ='$firstName', lastName='$lastName', password='$password',profilePicture='$profilePicture' WHERE id='$id' ";
-            // $statement=$this->databaseManager->connection->prepare($sqlForUpdate);
-            // $statement->execute();
+            $sqlForUpdate="UPDATE user SET firstName ='$firstName', lastName='$lastName', password='$password',profilepicture='$profilepicture' WHERE id='$id' ";
+            $statement=$this->databaseManager->connection->prepare($sqlForUpdate);
+            $statement->execute();
         
             // var_dump($statement);
 
 
 
-
+        
         // header("Location: ./View/info.php/?profile={$_SESSION["uid"]}");
 
         }

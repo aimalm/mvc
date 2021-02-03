@@ -16,7 +16,10 @@ class LoginController
     }
     public function login()
     {
+         
+            $_SESSION["loginErr"] ="";
 
+        //header('Location: View/sign_Up.php');
         if (isset($_POST['loginbtn'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -45,8 +48,8 @@ class LoginController
                     //exit();
                 } 
                 else 
-                {                   
-                    //header('Location: View/sign_Up.php');
+                {               
+         
                     $_SESSION["loginErr"] = "wrong password or email";
                 }
         }

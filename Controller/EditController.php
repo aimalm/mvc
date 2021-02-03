@@ -26,7 +26,7 @@ class EditController
         
         $sql="UPDATE gFRodNTslo.user SET firstName ='$firstName', lastName='$lastName', password='$password', profilePicture='$profilePicture' WHERE id='$id' ";
         $statement=$this->databaseManager->connection->query($sql);
-        $result=statement->fetch(PDO::FETCH_OBJ);
+        $result=$statement->fetch(PDO::FETCH_OBJ);
 
         var_dump($result);
 

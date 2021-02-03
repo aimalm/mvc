@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
-
 session_start();
-
 // Show errors so we get helpful information
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
@@ -20,6 +18,8 @@ require 'Controller/Sign_UpController.php';
 require 'Controller/EditController.php';
 require 'Model/signupModel.php';
 require 'Controller/LoginController.php';
+require 'Controller/ChallengeController.php';
+
 require 'Controller/UpdateController.php';
 
 
@@ -31,17 +31,20 @@ $databaseManager->connect();
 
 $controller = new HomepageController($databaseManager);
 if(isset($_GET['page']) && $_GET['page'] === 'info') {
-    $controller = new InfoController();
-
+    $controller = new InfoController($databaseManager);
 }
 
 if(isset($_GET['page']) && $_GET['page'] === 'signup') {
     $controller = new SignupController($databaseManager);
 }
+
 if(isset($_GET['page']) && $_GET['page'] === 'login') {
     $controller = new LoginController($databaseManager);
 }
 
+if(isset($_GET['page']) && $_GET['page'] === 'challenge') {
+    $controller = new ChallengeController($databaseManager);
+}
 if(isset($_GET['page']) && $_GET['page'] === 'edit') {
     $controller = new EditController($databaseManager);
 }
