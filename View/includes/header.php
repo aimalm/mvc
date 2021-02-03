@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="View/style/style.css">
     <title>Becode - Boiler plate MVC</title>
 </head>
@@ -23,6 +23,9 @@
                                 <a class="navbar-brand" href="../../index.php">Shenanigans</a>
                                 <li class="nav-item">
                                     <a class="nav-link" href="../../index.php">Log out</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../../index.php?page=challenge">Challenge</a>
                                 </li>
                                 <?php
                                 //exit();

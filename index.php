@@ -15,6 +15,8 @@ require 'Controller/HomepageController.php';
 require 'Controller/InfoController.php';
 require 'Controller/Sign_UpController.php';
 require 'Controller/LoginController.php';
+require 'Controller/ChallengeController.php';
+
 
 
 //you could write a simple IF here based on some $_GET or $_POST vars, to choose your controller
@@ -25,17 +27,20 @@ $databaseManager->connect();
 
 $controller = new HomepageController($databaseManager);
 if(isset($_GET['page']) && $_GET['page'] === 'info') {
-    $controller = new InfoController();
-
+    $controller = new InfoController($databaseManager);
 }
 
 if(isset($_GET['page']) && $_GET['page'] === 'signup') {
     $controller = new SignupController($databaseManager);
 }
+
 if(isset($_GET['page']) && $_GET['page'] === 'login') {
     $controller = new LoginController($databaseManager);
 }
 
+if(isset($_GET['page']) && $_GET['page'] === 'challenge') {
+    $controller = new ChallengeController($databaseManager);
+}
 
 $controller->render($_GET, $_POST);
 

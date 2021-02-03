@@ -1,4 +1,3 @@
-
 <?php require 'includes/header.php'?>
 
 <div class="position">
@@ -8,12 +7,12 @@
             <div class="mb-3">
                 <label for="email_login" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email_login" name="email" placeholder="Enter your email address...">
-                <!-- <div id="emailWarning" class="form-text">Your email address is invalid.</div> -->
+                <!-- <div id="emailWarning" class="form-text">Error message</div> -->
             </div>
             <div class="mb-3">
                 <label for="pass_login" class="form-label">Password</label>
                 <input type="password" class="form-control" id="pass_login" name="password" placeholder="Enter your password...">
-                <!-- <div id="emailWarning" class="form-text">Your password is invalid.</div> -->
+                <!-- <div id="passWarning" class="form-text">Your password is invalid.</div> -->
             </div>
             <button type="submit" class="btn btn-outline-secondary" id="loginbtn" name="loginbtn">Log in</button>
         </form>
