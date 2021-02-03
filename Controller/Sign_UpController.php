@@ -15,7 +15,7 @@ class SignupController
 
     public function render(array $GET, array $POST)
     {
-
+        
         //  $login=new LoginModel($databaseManager);
         //  $login->login();
 
@@ -43,7 +43,7 @@ class SignupController
             //$result->execute([$name,$lastName,$email,$password,$profilePicture]);
 
             header('Location: ./index.php?page=login');
-            //exit();
+            exit();
 
         }
 
