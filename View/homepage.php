@@ -19,6 +19,7 @@ Anything complex should be calculated in the model -->
         width: 100vw;
         display: flex;
         flex-direction: column;
+        background-color: #FCFCFC;
     }
 
     section {
@@ -30,12 +31,23 @@ Anything complex should be calculated in the model -->
     }
 
     h3 {
-        color: grey;
+        color:  grey;
+        opacity: 0.9;
     }
 
     footer {
         text-align: center;
         margin-bottom: 5px;
+    }
+
+    .btn {
+        background-color: #F15A24 !important;
+        border: #F15A24;
+        color: #FFFFFF !important;
+    }
+
+    button:hover {
+        background-color: #DB4A1A !important;
     }
 
 </style>
