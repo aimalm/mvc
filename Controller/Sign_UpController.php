@@ -13,30 +13,39 @@ class SignupController
         $this->databaseManager = $databaseManager;
     }
 
+    
+
     public function render(array $GET, array $POST)
     {
         
         //  $login=new LoginModel($databaseManager);
         //  $login->login();
+        $_SESSION["signUpErr"]="";
+        $_SESSION["passErr"] = "";
+
 
         if (isset($_POST['signup'])) {
             $name = $_POST['name'];
             $lastName = $_POST['lastname'];
             $email = $_POST['email'];
             $password = $_POST['password'];
+            $passwordrepeat = $_POST['passwordrepeat'];
+            
             //$profilePicture = $_POST['profilepic'];
 
-            $sqlTocheckDuplicates = "SELECT * FROM user WHERE email ='$email'";
-            $result = $this->databaseManager->connection->query($sqlTocheckDuplicates);
+            $user = "SELECT * FROM user WHERE email ='$email' AND password='$password'";
+            $stm = $this->databaseManager->connection->query($user);
+            //$result= $stm->execute();
+            $result = $stm->fetch(PDO::FETCH_ASSOC);
+            $userArray = $result;
 
-            foreach ($result as $user) {
                 //var_dump($em['email']);
-                if ($email === $user['email']) {
-                    $this->signUpErr = "Already an account is made with this email";
+                if ($userArray) {
+                    $_SESSION["signUpErr"] = "Already an account is made with this email";
 
-                    exit();
-                }
-            }
+                   // exit();
+                }else{
+            
             $sql = "INSERT INTO user (`firstName`, `lastName`, `email`, `password`, `profilePicture`) VALUES ('$name', '$lastName','$email', '$password', '$profilePicture')";
             $result = $this->databaseManager->connection->query($sql);
             //$result->prepare($result);
@@ -44,6 +53,12 @@ class SignupController
 
             header('Location: ./index.php?page=login');
             exit();
+        }
+        // password not match error
+        if($password !== $passwordrepeat){
+            $_SESSION["passErr"] = "Already an account is made with this email";
+
+        }
 
         }
 
