@@ -5,7 +5,6 @@ declare(strict_types=1);
 class SignupController
 {
     public $databaseManager;
-    public $signUpErr;
 
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function __construct(DatabaseManager $databaseManager)
@@ -23,7 +22,7 @@ class SignupController
         $_SESSION["signUpErr"]="";
         $_SESSION["passErr"] = "";
 
-
+        
         if (isset($_POST['signup'])) {
             $name = $_POST['name'];
             $lastName = $_POST['lastname'];
