@@ -22,11 +22,20 @@
                             <!-- this link should take you back to the main profile page instead of the homepage-->
                                 <a class="navbar-brand" href="../../index.php">Shenanigans</a>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../../index.php">Log out</a>
+                                <a class="nav-link" href="../../index.php">Log out</a>
                                 </li>
+<<<<<<< HEAD
                                 <li class="nav-item">
                                     <a class="nav-link" href="../../index.php?page=challenge">Challenge</a>
                                 </li>
+=======
+                                <li>
+                                <a class="nav-link" href="../../index.php?page=update">Update</a>
+                                <!-- http://localhost/becode-the-mountain/mvc/index.php?page=update -->
+                                </li>
+                                <a class="nav-link" href="../../index.php?page=edit">Edit</a>
+
+>>>>>>> d3b244f2b2b863663bb469af621f73518d76d572
                                 <?php
                                 //exit();
                             }

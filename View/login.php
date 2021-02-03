@@ -1,5 +1,7 @@
 <?php require 'includes/header.php'?>
 
+
+
 <div class="position">
     <div class="login-container">
         <h1>Log in</h1><br>
@@ -12,7 +14,7 @@
             <div class="mb-3">
                 <label for="pass_login" class="form-label">Password</label>
                 <input type="password" class="form-control" id="pass_login" name="password" placeholder="Enter your password...">
-                <!-- <div id="passWarning" class="form-text">Your password is invalid.</div> -->
+                 <div id="emailWarning" class="form-text"><?php echo $_SESSION["loginErr"]; ?></div> 
             </div>
             <button type="submit" class="btn btn-outline-secondary" id="loginbtn" name="loginbtn">Log in</button>
         </form>

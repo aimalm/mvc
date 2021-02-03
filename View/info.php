@@ -1,9 +1,10 @@
 <?php require 'includes/header.php'?>
 
-<h1>Main Page</h1>
 
-
-
+        <p><a href="index.php">Back to homepage</a></p>
+        <?php    
+        
+ ?>
 
 
 
