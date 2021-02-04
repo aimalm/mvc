@@ -20,7 +20,9 @@
                         <?php
                             if (isset($_GET['profile'])) { ?>
                             <!-- this link should take you back to the main profile page instead of the homepage-->
-                                <a class="navbar-brand" href="../../index.php">Shenanigans</a>
+                               <div class="logo_container">
+                                 <a class="navbar-brand" href="../../index.php"><img src="assets/logo/logo.png" alt=""></a>
+                               </div>
                                 <li class="nav-item">
                                 <a class="nav-link" href="../../index.php">Log out</a>
                                 </li>
@@ -52,3 +54,11 @@
             </div>
         </nav>
     </header>
+
+    <style>
+        .logo_container img{
+            height: 50px;
+            width: auto;
+        }
+
+     </style>

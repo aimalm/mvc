@@ -44,7 +44,7 @@ class LoginController
                     $_SESSION["uid"] = "{$result['id']}";
                     //echo $user['firstName'];
                     
-                    header("Location: ./View/info.php/?profile={$_SESSION["uid"]}");
+                    header("Location: index.php?page=info&profile={$_SESSION["uid"]}");
                     //exit();
                 } 
                 else 
