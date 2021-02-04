@@ -40,7 +40,7 @@ class SignupController
 
                 //var_dump($em['email']);
                 if ($userArray) {
-                    $_SESSION["signUpErr"] = "Already an account is made with this email";
+                    $_SESSION["signUpErr"] = "* Email does already exist";
 
                    // exit();
                 }else{
@@ -55,7 +55,7 @@ class SignupController
         }
         // password not match error
         if($password !== $passwordrepeat){
-            $_SESSION["passErr"] = "Already an account is made with this email";
+            $_SESSION["passErr"] = "* Passwords don't match";
 
         }
 

@@ -14,7 +14,7 @@
             <div class="mb-3">
                 <label for="pass_login" class="form-label">Password</label>
                 <input type="password" class="form-control" id="pass_login" name="password" placeholder="Enter your password...">
-                 <div id="emailWarning" class="form-text"><?php echo $_SESSION["loginErr"]; ?></div> 
+                <div id="loginErr" class="form-text"><?php echo $_SESSION["loginErr"]; ?></div> 
             </div>
             <button type="submit" class="btn btn-outline-secondary" id="loginbtn" name="loginbtn">Log in</button>
         </form>
@@ -24,7 +24,7 @@
 <style>
     body {
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -45,14 +45,21 @@
         font-size: 50px;
     }
 
-    button {
+    .btn {
+        background-color: #F15A24 !important;
+        border: #F15A24;
+        color: #FFFFFF !important;
         width: 100px;
-    }  
-
-    footer {
-        text-align: center;
-        margin-bottom: 5px;
     }
+
+    button:hover {
+        background-color: #DB4A1A !important;
+    }
+
+   #loginErr {
+       color: #F15A24;
+   }
+   
 </style>
 
 <?php require 'includes/footer.php'?>
