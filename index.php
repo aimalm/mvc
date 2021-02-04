@@ -19,6 +19,7 @@ require 'Controller/EditController.php';
 require 'Model/signupModel.php';
 require 'Controller/LoginController.php';
 require 'Controller/ChallengeController.php';
+require 'Controller/ChallengeCardController.php';
 
 require 'Controller/UpdateController.php';
 
@@ -32,14 +33,18 @@ $databaseManager->connect();
 $controller = new HomepageController($databaseManager);
 if(isset($_GET['page']) && $_GET['page'] === 'info') {
     $controller = new InfoController($databaseManager);
+    //$controller = new ChallengeCardController($databaseManager);
 }
+
 
 if(isset($_GET['page']) && $_GET['page'] === 'signup') {
     $controller = new SignupController($databaseManager);
 }
 
-if(isset($_GET['page']) && $_GET['page'] === 'login') {
-    $controller = new LoginController($databaseManager);
+if (!isset($_session['uid'])){
+    if(isset($_GET['page']) && $_GET['page'] === 'login') {
+        $controller = new LoginController($databaseManager);
+    }
 }
 
 if(isset($_GET['page']) && $_GET['page'] === 'challenge') {
@@ -53,8 +58,6 @@ if(isset($_GET['page']) && $_GET['page'] === 'update') {
     $controller = new UpdateController($databaseManager);
 
 }
-
-
 
 
 $controller->render($_GET, $_POST);

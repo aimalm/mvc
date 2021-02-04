@@ -1,5 +1,22 @@
 <?php require 'View/includes/header.php'?>
 <?php include 'View/includes/subMenu.php' ?>
+
+
+<?php
+//  require_once './Model/config1.php';
+//  require_once './Model/DatabaseManager.php';
+// require 'Controller/InfoController.php';
+//  require 'Controller/ChallengeCardController.php';
+
+//  $controller = new InfoController($databaseManager);
+
+//  $this->databaseManagertwo = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
+//  $databaseManagertwo->connect();
+//  $controller2 = new InfoController($databaseManagertwo);
+//     $controller2 = new ChallengeCardController($databaseManagertwo);
+
+?>
+
     <section>
         <div class="container">
             <div class="row">
@@ -22,12 +39,10 @@
                 </ul>
                 </div>
                 <div class="col contentSection">
-                One of three columns
+                    <?php require 'includes/challengeCard.php';?>
                 </div>
-                
             </div>
         </div>
-
 
     </section>
 <?php require 'includes/footer.php'?>
