@@ -16,7 +16,7 @@ Anything complex should be calculated in the model -->
 <style>
     body {
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         display: flex;
         flex-direction: column;
         background-color: #FCFCFC;

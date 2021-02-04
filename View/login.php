@@ -24,7 +24,7 @@
 <style>
     body {
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -45,9 +45,16 @@
         font-size: 50px;
     }
 
-    button {
+    .btn {
+        background-color: #F15A24 !important;
+        border: #F15A24;
+        color: #FFFFFF !important;
         width: 100px;
-    }  
+    }
+
+    button:hover {
+        background-color: #DB4A1A !important;
+    }
 
     footer {
         text-align: center;

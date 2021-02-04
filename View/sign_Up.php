@@ -24,22 +24,20 @@
             <div class="mb-3">
                 <input type="text" class="form-control" id="pass_signup" name="passwordrepeat" placeholder="Confirm your password...">
                 <p> <?php  echo $_SESSION["passErr"]; ?> </p>
-
             </div>
             <button type="submit" class="btn btn-outline-secondary" id="signup" name="signup">Sign up</button>
         </form>
     </div>
-</div>
+</div><br>
 <style>
     body {
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         display: flex;
         flex-direction: column;
     }
 
     .position {
-        height: 100vh;
         display: flex;
         justify-content: center;
     }
@@ -49,14 +47,20 @@
     }
 
     h1 {
-        margin-top: 10px;
         text-align: center;
         font-size: 50px;
     }
 
-    button {
+    .btn {
+        background-color: #F15A24 !important;
+        border: #F15A24;
+        color: #FFFFFF !important;
         width: 100px;
-    } 
+    }
+
+    button:hover {
+        background-color: #DB4A1A !important;
+    }
 
     footer {
         text-align: center;
