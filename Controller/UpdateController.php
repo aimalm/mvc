@@ -33,7 +33,8 @@ class UpdateController{
         $_SESSION['profilepicture']=$resultArray['profilePicture'];
         
         // UPDATE 
-        
+        $_SESSION['showerror']="";
+
         if(isset($_POST['update'])){
             $_SESSION['firstName']=$_POST['firstName'];
             $firstName=$_SESSION['firstName'];
@@ -49,21 +50,23 @@ class UpdateController{
             $sqlForUpdate="UPDATE user SET firstName ='$firstName', lastName='$lastName', password='$password',profilepicture='$profilepicture' WHERE id='$id' ";
             $statement=$this->databaseManager->connection->prepare($sqlForUpdate);
             $statement->execute();
-            header ('Location: index.php');
-        
+           
             // var_dump($statement);
 
             //DISPLAY ERROR FOR EMPTY FIELDS
 
-
-            if(!empty($_POST['firstName'] &&  $_POST['lastName'] && $_POST['password']  && $_POST['profilepicture'] )){
-            echo 'Your changes are successfully saved!';
+            if(empty($_POST['firstName'] &&  $_POST['lastName'] && $_POST['password']  && $_POST['profilepicture'] )){
+            // echo 'Your changes are successfully saved!';
             // var_dump($_POST['firstName']);
-            }else{
-                $_SESSION['showerror']='Required to fill in all the areas!';
+            
+                $_SESSION['showerror']='Please fill in all the areas!';
 
-            }
-        
+            }else {
+                
+            
+
+            header ("Location: View/info.php/?profile={$_SESSION['uid']}");
+
             
             //UPLOAD PROFILE IMAGE 
 
@@ -74,7 +77,7 @@ class UpdateController{
                 $sqlForImage="INSERT INTO user ( profilePicture) VALUES ('$profilePic')";
                 $statement=$this->databaseManager->connection->prepare($sqlForImage);
                 $statement->execute();
-
+                
                 if(move_uploaded_file($_FILES['profilePic']['tmp_name'],$target)){
                     echo "Profile picture has been changed succesfully";
                  } else {
@@ -115,8 +118,8 @@ class UpdateController{
 
 
         
-        // header("Location: ./View/info.php/?profile={$_SESSION["uid"]}");
-
+        //  header("Location: ./View/info.php/?profile={$_SESSION["uid"]}");
+        }
         }
     }
     
