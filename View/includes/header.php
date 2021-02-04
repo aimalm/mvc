@@ -30,12 +30,9 @@
                                         <a class="nav-link" href="../../index.php?page=challenge">Challenge</a>
                                     </li>
                                     <li>
-                                    <a class="nav-link" href="../../index.php?page=update"><img src="download.png" width="15px"></a>
-                                    <!-- http://localhost/becode-the-mountain/mvc/index.php?page=update -->
+                                    <a class="nav-link" href="../../index.php?page=update"><img src="../../View/download.png" width="25px"></a>
                                     </li>
-                                    <li>
-                                        <a class="nav-link" href="../../index.php?page=edit">Edit</a>
-                                    </li>
+                                    
                                 </ul>
                                 <?php
                                 //exit();
