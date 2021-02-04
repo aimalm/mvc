@@ -22,15 +22,13 @@
                 </ul>
                 </div>
                 <div class="col contentSection">
-                One of three columns
+                What is Lorem Ipsum?
                 </div>
-                
             </div>
         </div>
 
 
     </section>
-<?php require 'includes/footer.php'?>
 <style>
     .sideIcon img{
         height: auto;
@@ -45,4 +43,17 @@
         flex-direction: column;
         justify-content: space-between;
     }
+    #searchField {
+        border-radius: 5px;
+        border: 3px solid transparent;
+        margin-left: 5px;
+    }
+
+    #searchField:focus { 
+    outline: none;
+    border-color: #CCE5FF;
+    box-shadow: 0 0 10px #CCE5FF;
+    }
 </style>
+
+<?php require 'includes/footer.php'?>

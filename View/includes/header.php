@@ -19,7 +19,7 @@
                         <?php
                             if (isset($_GET['profile'])) { ?>
                                 <!-- <a class="navbar-brand" href="../../index.php">Shenanigans</a> -->
-                                <a class="navbar-brand" href="../../index.php">
+                                <a class="navbar-brand" href="index.php">
                                     <img src="assets/logo/logo.png" width="150" height="25" alt="">
                                 </a>
                                 <ul class="navbar-nav ml-auto">
