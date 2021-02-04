@@ -32,11 +32,7 @@
                                     <li>
                                     <a class="nav-link" href="index.php?page=update"><img src="assets/icons/update.png" width="15px"></a>
                                     <!-- http://localhost/becode-the-mountain/mvc/index.php?page=update -->
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="index.php?page=edit">Edit</a>
-                                    </li>
-                                    
+                                    </li>                                    
                                 </ul>
                                 <?php
                                 //exit();
