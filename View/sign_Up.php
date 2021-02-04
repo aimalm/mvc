@@ -15,7 +15,7 @@
             <div class="mb-3">
                 <label for="email_signup" class="form-label">Email</label>
                 <input type="text" class="form-control" id="email_signup" name="email" placeholder="Enter your email address...">
-                <p> <?php  echo $_SESSION["signUpErr"]; ?> </p>
+                <p class="errMsg"> <?php  echo $_SESSION["signUpErr"]; ?> </p>
             </div>
             <div class="mb-3">
                 <label for="pass_signup" class="form-label">Password</label>
@@ -23,7 +23,7 @@
             </div>
             <div class="mb-3">
                 <input type="text" class="form-control" id="pass_signup" name="passwordrepeat" placeholder="Confirm your password...">
-                <p> <?php  echo $_SESSION["passErr"]; ?> </p>
+                <p class="errMsg"> <?php  echo $_SESSION["passErr"]; ?> </p>
             </div>
             <button type="submit" class="btn btn-outline-secondary" id="signup" name="signup">Sign up</button>
         </form>
@@ -62,10 +62,9 @@
         background-color: #DB4A1A !important;
     }
 
-    footer {
-        text-align: center;
-        margin-bottom: 5px;
-    }
+   .errMsg {
+       color: #DB4A1A;
+   }
 
 </style>
 
