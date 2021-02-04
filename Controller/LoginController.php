@@ -50,7 +50,7 @@ class LoginController
                 else 
                 {               
          
-                    $_SESSION["loginErr"] = "wrong password or email";
+                    $_SESSION["loginErr"] = "* Wrong password or email";
                 }
         }
     }

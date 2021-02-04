@@ -5,7 +5,6 @@ declare(strict_types=1);
 class SignupController
 {
     public $databaseManager;
-    public $signUpErr;
 
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function __construct(DatabaseManager $databaseManager)
@@ -23,7 +22,7 @@ class SignupController
         $_SESSION["signUpErr"]="";
         $_SESSION["passErr"] = "";
 
-
+        
         if (isset($_POST['signup'])) {
             $name = $_POST['name'];
             $lastName = $_POST['lastname'];
@@ -41,7 +40,7 @@ class SignupController
 
                 //var_dump($em['email']);
                 if ($userArray) {
-                    $_SESSION["signUpErr"] = "Already an account is made with this email";
+                    $_SESSION["signUpErr"] = "* Email does already exist";
 
                    // exit();
                 }else{
@@ -56,7 +55,7 @@ class SignupController
         }
         // password not match error
         if($password !== $passwordrepeat){
-            $_SESSION["passErr"] = "Already an account is made with this email";
+            $_SESSION["passErr"] = "* Passwords don't match";
 
         }
 
