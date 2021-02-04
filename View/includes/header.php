@@ -20,17 +20,21 @@
                             if (isset($_GET['profile'])) { ?>
                                 <!-- <a class="navbar-brand" href="../../index.php">Shenanigans</a> -->
                                 <a class="navbar-brand" href="../../index.php">
-                                    <img src="../../View/images/logo.png" width="150" height="25" alt="">
+                                    <img src="assets/logo/logo.png" width="150" height="25" alt="">
                                 </a>
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item">
-                                    <a class="nav-link" href="../../index.php">Log out</a>
+                                    <a class="nav-link" href="index.php">Log out</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="../../index.php?page=challenge">Challenge</a>
+                                        <a class="nav-link" href="index.php?page=challenge">Challenge</a>
                                     </li>
                                     <li>
-                                    <a class="nav-link" href="../../index.php?page=update"><img src="../../View/download.png" width="25px"></a>
+                                    <a class="nav-link" href="index.php?page=update"><img src="assets/icons/update.png" width="15px"></a>
+                                    <!-- http://localhost/becode-the-mountain/mvc/index.php?page=update -->
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="index.php?page=edit">Edit</a>
                                     </li>
                                     
                                 </ul>
@@ -57,3 +61,11 @@
             </div>
         </nav>
     </header>
+
+    <style>
+        .logo_container img{
+            height: 50px;
+            width: auto;
+        }
+
+     </style>
