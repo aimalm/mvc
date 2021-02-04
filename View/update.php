@@ -11,7 +11,7 @@
 <div class="image-field">
     <input type="file" name="profilepicture"value="<?php echo $_SESSION["profilepicture"]; ?>" >
 
-    <input type="submit" name="imagebutton" value="Upload image">
+    <!-- <input type="submit" name="imagebutton" value="Upload image"> -->
     <!-- imagebutton needs to be hidden while styling -->
 
 </div>

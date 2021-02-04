@@ -49,6 +49,7 @@ class UpdateController{
             $sqlForUpdate="UPDATE user SET firstName ='$firstName', lastName='$lastName', password='$password',profilepicture='$profilepicture' WHERE id='$id' ";
             $statement=$this->databaseManager->connection->prepare($sqlForUpdate);
             $statement->execute();
+            header ('Location: index.php');
         
             // var_dump($statement);
 
