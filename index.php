@@ -15,7 +15,6 @@ require 'Model/User.php';
 require 'Controller/HomepageController.php';
 require 'Controller/InfoController.php';
 require 'Controller/Sign_UpController.php';
-require 'Controller/EditController.php';
 require 'Model/signupModel.php';
 require 'Controller/LoginController.php';
 require 'Controller/ChallengeController.php';
@@ -44,9 +43,6 @@ if(isset($_GET['page']) && $_GET['page'] === 'login') {
 
 if(isset($_GET['page']) && $_GET['page'] === 'challenge') {
     $controller = new ChallengeController($databaseManager);
-}
-if(isset($_GET['page']) && $_GET['page'] === 'edit') {
-    $controller = new EditController($databaseManager);
 }
 
 if(isset($_GET['page']) && $_GET['page'] === 'update') {

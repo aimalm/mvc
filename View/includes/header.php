@@ -36,6 +36,7 @@
                                     <li>
                                         <a class="nav-link" href="index.php?page=edit">Edit</a>
                                     </li>
+                                    
                                 </ul>
                                 <?php
                                 //exit();
