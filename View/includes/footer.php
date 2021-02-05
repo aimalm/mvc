@@ -2,14 +2,14 @@
 
 <footer>
         <!-- Just an image -->
-    <nav class="navbar fixed-bottom navbar-light bg-dark">
+    <nav class="navbar fixed-bottom navbar navbar-dark" style="background-color: #051832";>
         <div class="social">
         <a target="_blank" href="https://www.facebook.com" class="fa fa-facebook"></a>
         <a target="_blank"href="https://www.instagram.com/blaustern_fotografie/" class="fa fa-twitter"></a> 
         <a target="_blank"href="https://tr.pinterest.com/pin/55098795421788466/" class="fa fa-pinterest"></a>
         <a target="_blank"href="https://www.youtube.com/results?search_query=challenge+dance" class="fa fa-youtube"></a>
     </div>
-    <p class="copy">&copy; Shenanigans <?php echo date('Y')?></p>
+    <p class="copy">&copy; <img src="assets/logo/logo.png" width="100" height="15" alt=""> <?php echo date('Y')?></p>
 
     </nav>
        
@@ -39,7 +39,7 @@
 
 /* Add a hover effect if you want */
 .fa:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 </style>

@@ -19,9 +19,10 @@ Anything complex should be calculated in the model -->
   <div class="carousel-inner">
     <div class="carousel-item active">
     <div class="d-flex justify-content-center w-100 h-100">
+    
             <img class="d-block w-100" src="View/images/girl.jfif"alt="First slide">
             <div class="carousel-caption">
-        <h4>Enjoy challenges! </h4>
+            <h4>Enjoy challenges! </h4>
         <h5 style="color:black;">Get a wonderful view on top of a mountain.</h5>
       </div>
         
@@ -29,10 +30,11 @@ Anything complex should be calculated in the model -->
     </div>
     <div class="carousel-item">
     <div class="d-flex justify-content-center w-100 h-100">
-          <img class="d-block w-100" src="View/images/dog2.jpg" alt="Second slide">
+          <img class="d-block w-100" src="View/images/dog4.jpg" alt="Second slide">
           <span class="border border-info"></span>
           <div class="carousel-caption">
-        <h4 style="color:black;">Make a friend smile!</h4>    
+        <h4 style="color:#2b2b30;">Make your friend smile!</h4> 
+   
       </div>
 
         </div>
@@ -84,7 +86,7 @@ Anything complex should be calculated in the model -->
   
     h3{
         opacity:0.5;
-        color:grey;
+        color:#051832;
     }
     
 
@@ -105,7 +107,7 @@ Anything complex should be calculated in the model -->
     }
 
     .d-block {
-    max-width:40%;
+    max-width:50%;
     max-height:30%;
     }
 
