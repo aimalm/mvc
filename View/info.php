@@ -17,14 +17,15 @@
 
 ?>
 
-    <section>
+    <section style="padding-top: 10px;">
         <div class="container">
             <div class="row">
-                <div class="col-3 sideBar">
+                <div class="col-lg-2 sideBar">
                 <ul>
+                       
                     <li>
                         <div class="sideIcon">
-                            <a href=""><img src="assets/icons/Icon_right.png" alt=""></a>
+                            <a href="index.php?page=challenge"><img src="assets/icons/Icon_right.png" alt=""></a>
                         </div>
                     </li>
                     <li>
@@ -57,7 +58,13 @@
         position: fixed;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        list-style-type: none;
+        
+
+    }
+    .sideBar ul li{
+        padding: 15px;
+
     }
     #searchField {
         border-radius: 5px;

@@ -9,7 +9,7 @@ class InfoController
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.
         if($_GET['logout']){
-           // session_destroy();
+            session_destroy();
         }
         //load the view
         //require 'View/includes/header.php';
