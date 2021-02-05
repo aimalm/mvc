@@ -38,4 +38,15 @@ class DatabaseManager
 
         //$this->connection = null;
     }
+
+    public function getChallenges(){
+
+        $user = "SELECT * FROM user";
+        $stm = $this->connection->query($user);
+        $result= $stm->execute();
+        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+        $userArray = $result;
+        
+        return $userArray;
+    }
 }
