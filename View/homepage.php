@@ -6,12 +6,7 @@ require 'includes/header.php';
 
 <!-- this is the view, try to put only simple if's and loops here.
 Anything complex should be calculated in the model -->
-<section>
-
-    <h3>Challenge your friends and create lifelong memories</h3><br>
-    
-
-
+<section>    
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -22,21 +17,20 @@ Anything complex should be calculated in the model -->
   <div class="carousel-inner">
     <div class="carousel-item active">
     <div class="d-flex justify-content-center w-100 h-100">
-            <img class="d-block w-100" src="View/images/mountain.png"alt="First slide">
+            <img class="d-block w-100" src="View/images/girl.jfif"alt="First slide">
             <div class="carousel-caption">
-        <h4>Enjoy climing! </h4>
-        <p>Get a wonderful view on top of a mountain..</p>
+        <h4>Enjoy challenges! </h4>
+        <h5 style="color:black;">Get a wonderful view on top of a mountain.</h5>
       </div>
         
         </div>
     </div>
     <div class="carousel-item">
     <div class="d-flex justify-content-center w-100 h-100">
-          <img class="d-block w-100" src="View/images/cowcoww.jpg" alt="Second slide">
+          <img class="d-block w-100" src="View/images/dog2.jpg" alt="Second slide">
           <span class="border border-info"></span>
           <div class="carousel-caption">
-        <h3>Fun times!</h3>
-        <p>Make a selfie with new friends..</p>    
+        <h4 style="color:black;">Make a friend smile!</h4>    
       </div>
 
         </div>
@@ -45,8 +39,7 @@ Anything complex should be calculated in the model -->
     <div class="d-flex justify-content-center w-100 h-100">
           <img class="d-block w-100" src="View/images/library.jfif"alt="Third slide">
           <div class="carousel-caption">
-        <h3>Libraries are only to read,ups?</h3>
-        <p>Make some exeptions..</p>
+        <h4 style="color:white;">Libraries aren't only to read,right?</h4>
       </div>
     </div>
     </div>
@@ -60,11 +53,14 @@ Anything complex should be calculated in the model -->
     <span class="sr-only">Next</span>
   </a>
 </div>
-    
-<h5>Got some cool inspirations already? Sign up now and get challenged!</h5><br>
+<div class="txt">
+<h3>Make your new memories unforgettable,sign up!</h3>
+</div>  
+<div class="button">
     <form action="index.php?page=signup" method="post">
         <button type="submit" class="btn btn-outline-secondary btn-lg" id="loginbtn" name="loginbtn">Sign up</button>
     </form>
+</div>
 </section>
 <style>
     body {
@@ -83,10 +79,12 @@ Anything complex should be calculated in the model -->
         justify-content: center;
     }
 
-    h3 {
-        color:  grey;
-        opacity: 0.9;
+  
+    h3{
+        opacity:0.5;
+        color:grey;
     }
+    
 
     footer {
         text-align: center;

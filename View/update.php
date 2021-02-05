@@ -42,7 +42,7 @@
 
  <div class="text-center">
     <div class="btn pull-right" >
-        <button type="submit" id="editbtn"class=" btn btn-primary" name="update">Edit </button>
+        <button type="submit" id="editbtn"class=" btn btn-primary" name="update">SAVE CHANGES </button>
     </div>
 </div>
 
@@ -61,7 +61,6 @@
 
 
 #editbtn{
-    width:50px;
     height:40px;
 }
 
