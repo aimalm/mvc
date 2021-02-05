@@ -26,9 +26,7 @@
                                     <li class="nav-item">
                                     <a class="nav-link" href="index.php">Log out</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="index.php?page=challenge">Challenge</a>
-                                    </li>
+                                    
                                     <li>
                                     <a class="nav-link" href="index.php?page=update"><img src="assets/icons/update.png" width="15px"></a>
                                     <!-- http://localhost/becode-the-mountain/mvc/index.php?page=update -->
@@ -63,5 +61,6 @@
             height: 50px;
             width: auto;
         }
+        
 
      </style>
