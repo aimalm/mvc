@@ -1,6 +1,6 @@
-###Shenenigans
+### Shenenigans
 
-#This project is a social media platform where users create their personal photo memories by sending challenges to their friends
+# This project is a social media platform where users create their personal photo memories by sending challenges to their friends
 
  Here is a small description to make the concept more clear;
  
@@ -9,7 +9,7 @@
 -The person that is challenged has a limited time(it can be short like 24 hours, 1 week or longer ) to respond to the challenge,so be careful to not miss the deadline.
 
 
-#Things to Improve 
+# Things to Improve 
 
 -Connect two tables to each other in the database.
 -Achieve to add another or multiple users to the page.
